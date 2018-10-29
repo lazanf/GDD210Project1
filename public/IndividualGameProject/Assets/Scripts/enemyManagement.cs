@@ -10,9 +10,12 @@ public class enemyManagement : MonoBehaviour {
 
     Rigidbody2D rb;
 
+    public int damage;
 	// Use this for initialization
 	void Start () {
         rb = GetComponent<Rigidbody2D>();
+
+        damage = 1;
 	}
 	
 	// Update is called once per frame
@@ -22,7 +25,7 @@ public class enemyManagement : MonoBehaviour {
 
     private void OnCollisionEnter2D(Collision2D collision) {
         if (collision.gameObject.tag == "bullet") {
-            HP--;
+            HP = HP - damage;
             if (HP == 0) {
                 Destroy(gameObject);
             }

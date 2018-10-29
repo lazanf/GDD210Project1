@@ -22,7 +22,7 @@ GameObject:
   m_Layer: 0
   m_Name: OriginPoint
   m_TagString: Untagged
-  m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -41,7 +41,7 @@ GameObject:
   - component: {fileID: 114598441191807946}
   m_Layer: 0
   m_Name: enemyCrab
-  m_TagString: Untagged
+  m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -84,7 +84,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 0.0001
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
@@ -129,9 +129,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8a4a6fa87dc94ef0b42b6d96a9b2f34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  originPoint: {fileID: 0}
-  range: 0
-  speed: 0
+  originPoint: {fileID: 4607629319198516}
+  range: 0.01
+  speed: -3
 --- !u!114 &114598441191807946
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -143,7 +143,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df67b835323f642f49b672b7049a7a55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 1592356811715692, guid: dcca23a169efc42c3852740552b5126b, type: 2}
   HP: 3
+  damage: 1
 --- !u!212 &212570261863800610
 SpriteRenderer:
   m_ObjectHideFlags: 1

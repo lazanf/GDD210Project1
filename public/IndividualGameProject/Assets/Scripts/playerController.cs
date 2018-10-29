@@ -27,8 +27,17 @@ public class playerController : MonoBehaviour {
 
     public Button resetButton;
 
+    public int damage;
+
+    public int playerHealth;
+
+    public int iframes;
 	// Use this for initialization
 	void Start () {
+        playerHealth = 5;
+
+        damage = 1;
+
         rb = GetComponent<Rigidbody2D>();
 
         jumps = 2;
@@ -74,12 +83,14 @@ public class playerController : MonoBehaviour {
         if (collision.gameObject.tag == "ground") {
             jumps = maxJumps;
             grounded = true;
+        } else if (collision.gameObject.tag == "enemy") {
+            damagePlayer(1);
+            Debug.Log(playerHealth);
         }
+    }
 
-        if (collision.gameObject.tag == "enemy") {
-            Destroy(gameObject);
-            resetButton.gameObject.SetActive(true);
-        }
+    private void FixedUpdate() {
+        iframes--;
     }
 
     //I found the code for shooting (e.g. void Shoot() and IEnumerator CanShoot() from 
@@ -94,5 +105,19 @@ public class playerController : MonoBehaviour {
         canShoot = false;
         yield return new WaitForSeconds(cooldown);
         canShoot = true;
+    }
+
+    void damagePlayer(int damage) {
+        if (iframes > 0) {
+            return;
+        }
+        playerHealth -= damage;
+        if (playerHealth <= 0) {
+            Destroy(gameObject);
+            resetButton.gameObject.SetActive(true);
+        }
+        if (playerHealth > 0) {
+            iframes = 120;
+        }
     }
 }

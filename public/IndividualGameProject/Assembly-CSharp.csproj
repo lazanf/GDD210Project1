@@ -61,11 +61,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\backToMainMenu.cs" />
     <Compile Include="Assets\Scripts\bulletControl.cs" />
     <Compile Include="Assets\Scripts\cameraFollowsPlayer.cs" />
     <Compile Include="Assets\Scripts\enemyManagement.cs" />
     <Compile Include="Assets\Scripts\EnemyMovement.cs" />
     <Compile Include="Assets\Scripts\gameManagement.cs" />
+    <Compile Include="Assets\Scripts\goToInstructions.cs" />
+    <Compile Include="Assets\Scripts\helperManagement.cs" />
     <Compile Include="Assets\Scripts\playerController.cs" />
     <Compile Include="Assets\Scripts\startGame.cs" />
     <Compile Include="Assets\Scripts\winTheGame.cs" />

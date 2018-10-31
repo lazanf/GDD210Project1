@@ -12,6 +12,8 @@ public class enemyManagement : MonoBehaviour {
     Rigidbody2D rb;
 
     public int damage;
+
+    public Text playerHealthText;
 	// Use this for initialization
 	void Start () {
         rb = GetComponent<Rigidbody2D>();

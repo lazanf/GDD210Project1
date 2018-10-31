@@ -36,6 +36,8 @@ public class playerController : MonoBehaviour {
     public Text savedText;
 
     public int colonistsSaved;
+
+    public Text healthText;
 	// Use this for initialization
 	void Start () {
         playerHealth = 5;
@@ -89,10 +91,11 @@ public class playerController : MonoBehaviour {
             grounded = true;
         } else if (collision.gameObject.tag == "enemy") {
             damagePlayer(1);
+            healthText.text = "Remaining player health: " + playerHealth + "/5";
             Debug.Log(playerHealth);
         } else if (collision.gameObject.tag == "helper") {
             colonistsSaved++;
-            savedText.text = "Colonists saved: " + colonistsSaved + "/5";
+            savedText.text = "Colonists saved: " + colonistsSaved + "/2";
         }
     }
 

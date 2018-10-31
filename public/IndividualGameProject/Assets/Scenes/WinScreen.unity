@@ -413,8 +413,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "Thanks for playing! Ideally with \na lot more polish and a lot more time\nable
-    to be dedicated, this sample level\ncould be expanded into a full-blown game."
+  m_Text: To Be Continued...
 --- !u!222 &2020044430
 CanvasRenderer:
   m_ObjectHideFlags: 0

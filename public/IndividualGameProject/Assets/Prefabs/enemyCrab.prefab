@@ -34,11 +34,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4434612387982128}
-  - component: {fileID: 212570261863800610}
   - component: {fileID: 61157851781624288}
   - component: {fileID: 114481193666226488}
   - component: {fileID: 50203770395403620}
   - component: {fileID: 114598441191807946}
+  - component: {fileID: 212309440949701718}
+  - component: {fileID: 95467101801987752}
   m_Layer: 0
   m_Name: enemyCrab
   m_TagString: enemy
@@ -118,6 +119,24 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.28347152, y: 0.27994168}
   m_EdgeRadius: 0
+--- !u!95 &95467101801987752
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1338889071252152}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 57c76d1fe6b04064b9dbea04f7902178, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &114481193666226488
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -146,7 +165,8 @@ MonoBehaviour:
   player: {fileID: 1592356811715692, guid: dcca23a169efc42c3852740552b5126b, type: 2}
   HP: 3
   damage: 1
---- !u!212 &212570261863800610
+  playerHealthText: {fileID: 0}
+--- !u!212 &212309440949701718
 SpriteRenderer:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -181,7 +201,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 92dc5fd35ad07452cbb4501123046b43, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f274fc530acb846d2bfe70274467e0f2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

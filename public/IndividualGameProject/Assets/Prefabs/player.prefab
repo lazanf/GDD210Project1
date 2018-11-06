@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 50425735587928438}
   - component: {fileID: 61251620003299302}
   - component: {fileID: 82912672058010774}
+  - component: {fileID: 95865837573531406}
   m_Layer: 0
   m_Name: player
   m_TagString: Untagged
@@ -184,6 +185,24 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!95 &95865837573531406
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1592356811715692}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0f19c1947e719464a8f234dc040c952d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &114735944350420576
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -204,7 +223,9 @@ MonoBehaviour:
   damage: 0
   playerHealth: 0
   iframes: 0
-  EnemyManagement: {fileID: 0}
+  savedText: {fileID: 0}
+  colonistsSaved: 0
+  healthText: {fileID: 0}
 --- !u!212 &212156293627436616
 SpriteRenderer:
   m_ObjectHideFlags: 1

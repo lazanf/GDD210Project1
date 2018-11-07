@@ -38,13 +38,18 @@ public class playerController : MonoBehaviour {
     public int colonistsSaved;
 
     public Text healthText;
-	// Use this for initialization
-	void Start () {
+
+    private bool facingRight = true;
+    private Animator myAnimator;
+    public float speed = 2;
+    // Use this for initialization
+    void Start () {
         playerHealth = 5;
 
         damage = 1;
 
         rb = GetComponent<Rigidbody2D>();
+        myAnimator = GetComponent<Animator>();
 
         jumps = 2;
 
@@ -58,19 +63,12 @@ public class playerController : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.Space)) {
             Jump();
         }
-        if (Input.GetKey(KeyCode.RightArrow)) {
-            gameObject.transform.position += Vector3.right * 2.0f * Time.deltaTime;
-        }
-
-        if (Input.GetKey(KeyCode.LeftArrow))
-        {
-            gameObject.transform.position += Vector3.left * 2.0f * Time.deltaTime;
-        }
 
         if (Input.GetKeyDown(KeyCode.X) && canShoot) {
             StartCoroutine(CanShoot());
             Shoot();
         }
+        myAnimator.SetBool("grounded", grounded);
     }
 
     void Jump() {
@@ -101,6 +99,9 @@ public class playerController : MonoBehaviour {
 
     private void FixedUpdate() {
         iframes--;
+        float horizontal = Input.GetAxis("Horizontal");//return a value between -1 and 1
+        controlPlayer(horizontal);
+        flipPlayer(horizontal);
     }
 
     //I found the code for shooting (e.g. void Shoot() and IEnumerator CanShoot() from 
@@ -130,4 +131,25 @@ public class playerController : MonoBehaviour {
             iframes = 120;
         }
     }
+
+
+    void controlPlayer(float horizontal)
+    {
+        rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
+        myAnimator.SetFloat("speed", Mathf.Abs(horizontal));
+    }
+
+    void flipPlayer(float horizontal)
+    {
+        if ((horizontal < 0 && facingRight) || (horizontal > 0 && !facingRight))
+        {
+            Vector3 girlScale = transform.localScale;//current pos
+            girlScale.x *= -1;
+            transform.localScale = girlScale;
+            facingRight = !facingRight;
+        }
+    }
+
+
 }
+

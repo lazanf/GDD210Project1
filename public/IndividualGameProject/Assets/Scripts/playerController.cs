@@ -64,7 +64,7 @@ public class playerController : MonoBehaviour {
             Jump();
         }
 
-        if (Input.GetKeyDown(KeyCode.X) && canShoot) {
+        if ((Input.GetKeyDown(KeyCode.X) || Input.GetKeyDown(KeyCode.Return)) && canShoot) {
             StartCoroutine(CanShoot());
             Shoot();
         }

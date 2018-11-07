@@ -226,6 +226,7 @@ MonoBehaviour:
   savedText: {fileID: 0}
   colonistsSaved: 0
   healthText: {fileID: 0}
+  speed: 3
 --- !u!212 &212156293627436616
 SpriteRenderer:
   m_ObjectHideFlags: 1
